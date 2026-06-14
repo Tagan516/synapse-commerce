@@ -1,0 +1,2 @@
+namespace SynapseCommerce.products.Endpoints;
+
