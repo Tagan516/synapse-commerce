@@ -1,0 +1,40 @@
+<Solution>
+  <Folder Name="/customers-api/" />
+  <Folder Name="/customers-api/src/">
+    <Project Path="customers-api/src/SynapseCommerce.Customers/SynapseCommerce.Customers.csproj" />
+  </Folder>
+  <Folder Name="/customers-api/tests/">
+    <Project Path="customers-api/tests/SynapseCommerce.Customers.Tests/SynapseCommerce.Customers.Tests.csproj" />
+  </Folder>
+  <Folder Name="/inventory-api/" />
+  <Folder Name="/inventory-api/src/">
+    <Project Path="inventory-api/src/SynapseCommerce.Inventory/SynapseCommerce.Inventory.csproj" />
+  </Folder>
+  <Folder Name="/inventory-api/tests/">
+    <Project Path="inventory-api/tests/SynapseCommerce.Inventory.Tests/SynapseCommerce.Inventory.Tests.csproj" />
+  </Folder>
+  <Folder Name="/orders-api/" />
+  <Folder Name="/orders-api/src/">
+    <Project Path="orders-api/src/SynapseCommerce.Orders/SynapseCommerce.Orders.csproj" />
+  </Folder>
+  <Folder Name="/orders-api/tests/">
+    <Project Path="orders-api/tests/SynapseCommerce.Orders.Tests/SynapseCommerce.Orders.Tests.csproj" />
+  </Folder>
+  <Folder Name="/payments-api/" />
+  <Folder Name="/payments-api/src/">
+    <Project Path="payments-api/src/SynapseCommerce.Payments/SynapseCommerce.Payments.csproj" />
+  </Folder>
+  <Folder Name="/payments-api/tests/">
+    <Project Path="payments-api/tests/SynapseCommerce.Payments.Tests/SynapseCommerce.Payments.Tests.csproj" />
+  </Folder>
+  <Folder Name="/products-api/" />
+  <Folder Name="/products-api/src/">
+    <Project Path="products-api/src/SynapseCommerce.Products/SynapseCommerce.Products.csproj" />
+  </Folder>
+  <Folder Name="/products-api/tests/">
+    <Project Path="products-api/tests/SynapseCommerce.Products.Tests/SynapseCommerce.Products.Tests.csproj" />
+  </Folder>
+  <Folder Name="/shared/">
+    <Project Path="shared/SynapseCommerce.Shared/SynapseCommerce.Shared.csproj" />
+  </Folder>
+</Solution>
