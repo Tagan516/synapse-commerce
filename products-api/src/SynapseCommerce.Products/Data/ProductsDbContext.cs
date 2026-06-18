@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using SynapseCommerce.Products.Domain;
+
 public class ProductsDBContext : DbContext
 {
     public ProductsDBContext(DbContextOptions<ProductsDBContext> options) : base(options)

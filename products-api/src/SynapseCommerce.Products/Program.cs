@@ -1,11 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+var connectionString = builder.Configuration.GetConnectionString("ProductsDbConnectionString");
+var dbPassword = builder.Configuration["DbConnectionPassword"];
+var npgsqlBuilder = new Npgsql.NpgsqlConnectionStringBuilder(connectionString)
+{
+    Password = dbPassword
+};
 
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddDbContext<ProductsDBContext>(options =>
+    options.UseNpgsql(npgsqlBuilder.ConnectionString));
 builder.Services.AddOpenApi();
-
-// TODO: Setup DB connection string and add DB context to services
 
 var app = builder.Build();
 
