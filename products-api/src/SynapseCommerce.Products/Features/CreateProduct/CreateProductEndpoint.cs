@@ -3,15 +3,15 @@ using SynapseCommerce.Shared;
 
 namespace SynapseCommerce.products.Endpoints;
 
-public class CreateProductEndpoint (ProductsDbContext db) : IEndpoint
+public class CreateProductEndpoint () : IEndpoint
 {
     public void MapRoutes(IEndpointRouteBuilder app)
     {
-        app.MapPost("/products", async (CreateProductRequest request) =>
+        app.MapPost("/products", async (CreateProductRequest request, ProductsDbContext db) =>
         {
             var product = new Product
             {
-                Id = new Guid(),
+                Id = Guid.NewGuid(),
                 SKU = request.SKU,
                 Name = request.Name,
                 Description = request.Description,
@@ -27,6 +27,8 @@ public class CreateProductEndpoint (ProductsDbContext db) : IEndpoint
             await db.SaveChangesAsync();
 
             return Results.Created($"/products/{product.Id}", product);
-        });
+        })
+        .WithTags("Products")
+        .WithName("CreateProduct");
     }
 }
