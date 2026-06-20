@@ -2,11 +2,11 @@ using SynapseCommerce.Shared;
 
 namespace SynapseCommerce.Products.Features.GetProduct;
 
-public class GetProductEndpoint(ProductsDbContext db) : IEndpoint
+public class GetProductEndpoint() : IEndpoint
 {
     public void MapRoutes(IEndpointRouteBuilder app)
     {
-        app.MapGet("/products/{id:guid}", async (Guid id) =>
+        app.MapGet("/products/{id:guid}", async (Guid id, ProductsDbContext db) =>
         {
             var product = await db.Products.FindAsync(id);
 
