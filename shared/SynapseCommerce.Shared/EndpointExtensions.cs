@@ -6,7 +6,7 @@ public static class EndpointExtensions
 {
     public static IServiceCollection AddDiscoveredEndpoints(this IServiceCollection services)
     {
-        // Get the current microservice assembly
+        // Get the current microservice's assembly
         var assembly = Assembly.GetEntryAssembly();
         if (assembly == null) return services;
 
