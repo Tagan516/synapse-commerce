@@ -1,4 +1,6 @@
+using System.Reflection;
 using Microsoft.EntityFrameworkCore;
+using SynapseCommerce.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,18 +17,10 @@ var npgsqlBuilder = new Npgsql.NpgsqlConnectionStringBuilder(connectionString)
 builder.Services.AddDbContext<ProductsDbContext>(options =>
     options.UseNpgsql(npgsqlBuilder.ConnectionString));
 
-builder.Services.AddOpenApi();
+builder.Services.AddDiscoveredEndpoints();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
+app.MapDiscoveredEndpoints();
 
 app.Run();
